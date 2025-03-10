@@ -6,14 +6,28 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		644E725D2D7F6E48000933A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644E72572D7F6E48000933A2 /* Preview Assets.xcassets */; };
+		644E725E2D7F6E48000933A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644E725A2D7F6E48000933A2 /* Assets.xcassets */; };
+		644E725F2D7F6E48000933A2 /* appleInvitesCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644E72592D7F6E48000933A2 /* appleInvitesCloneApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		644E72462D7F6D8A000933A2 /* appleInvitesClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appleInvitesClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		644E72572D7F6E48000933A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		644E72592D7F6E48000933A2 /* appleInvitesCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleInvitesCloneApp.swift; sourceTree = "<group>"; };
+		644E725A2D7F6E48000933A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		644E72482D7F6D8A000933A2 /* appleInvitesClone */ = {
+		644E72612D7F6E8E000933A2 /* Models */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = appleInvitesClone;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		644E72622D7F6E94000933A2 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +46,8 @@
 		644E723D2D7F6D8A000933A2 = {
 			isa = PBXGroup;
 			children = (
-				644E72482D7F6D8A000933A2 /* appleInvitesClone */,
+				644E725C2D7F6E48000933A2 /* appleInvitesClone */,
+				644E725A2D7F6E48000933A2 /* Assets.xcassets */,
 				644E72472D7F6D8A000933A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +58,25 @@
 				644E72462D7F6D8A000933A2 /* appleInvitesClone.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		644E72582D7F6E48000933A2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				644E72572D7F6E48000933A2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		644E725C2D7F6E48000933A2 /* appleInvitesClone */ = {
+			isa = PBXGroup;
+			children = (
+				644E72592D7F6E48000933A2 /* appleInvitesCloneApp.swift */,
+				644E72622D7F6E94000933A2 /* Views */,
+				644E72612D7F6E8E000933A2 /* Models */,
+				644E72582D7F6E48000933A2 /* Preview Content */,
+			);
+			path = appleInvitesClone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -61,7 +95,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				644E72482D7F6D8A000933A2 /* appleInvitesClone */,
+				644E72612D7F6E8E000933A2 /* Models */,
+				644E72622D7F6E94000933A2 /* Views */,
 			);
 			name = appleInvitesClone;
 			packageProductDependencies = (
@@ -109,6 +144,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644E725D2D7F6E48000933A2 /* Preview Assets.xcassets in Resources */,
+				644E725E2D7F6E48000933A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644E725F2D7F6E48000933A2 /* appleInvitesCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
