@@ -13,7 +13,7 @@ struct ContentView: View {
 	@State private var activeCard: Card? = cards.first
 	@State private var scrollPosition: ScrollPosition = .init()
 	@State private var currentScrollOffset: CGFloat = 0
-	@State private var timer = Timer
+	@State private var timer = Timer.publish(every: 0.01, on: .current, in: .default).autoconnect()
 	
 	// MARK: - View Body
     var body: some View {
@@ -30,11 +30,16 @@ struct ContentView: View {
 					}
 				}
 				.scrollIndicators(.hidden)
+				.scrollPosition($scrollPosition)
 				.containerRelativeFrame(.vertical) { value, _ in
 					value * 0.45
 				}
 			}
 			.safeAreaPadding(15)
+		}
+		.onReceive(timer) { _ in
+			currentScrollOffset += 0.35
+			scrollPosition.scrollTo(x: currentScrollOffset)
 		}
     }
 	
