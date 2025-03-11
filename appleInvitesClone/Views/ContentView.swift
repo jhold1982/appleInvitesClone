@@ -11,7 +11,9 @@ struct ContentView: View {
 	
 	// MARK: - Properties
 	@State private var activeCard: Card? = cards.first
-	
+	@State private var scrollPosition: ScrollPosition = .init()
+	@State private var currentScrollOffset: CGFloat = 0
+	@State private var timer = Timer
 	
 	// MARK: - View Body
     var body: some View {
@@ -22,12 +24,9 @@ struct ContentView: View {
 			
 			VStack(spacing: 40) {
 				
-				ScrollView(.horizontal) {
-					
-					HStack(spacing: 10) {
-						ForEach(cards) { card in
-							CarouselCardView(card)
-						}
+				InfiniteScrollView  {
+					ForEach(cards) { card in
+						CarouselCardView(card)
 					}
 				}
 				.scrollIndicators(.hidden)
@@ -68,10 +67,25 @@ struct ContentView: View {
 	/// Carousel Card View
 	@ViewBuilder
 	private func CarouselCardView(_ card: Card) -> some View {
-		GeometryReader { _ in
-			// 
+		GeometryReader {
+			
+			let size = $0.size
+			
+			Image(card.image)
+				.resizable()
+				.aspectRatio(contentMode: .fill)
+				.frame(width: size.width, height: size.height)
+				.clipShape(.rect(cornerRadius: 20))
+				.shadow(color: .black.opacity(0.4), radius: 10, x: 1, y: 0)
+			
+			
 		}
 		.frame(width: 220)
+		.scrollTransition(.interactive.threshold(.centered), axis: .horizontal) { content, phase in
+			content
+				.offset(y: phase == .identity ? -10 : 0)
+				.rotationEffect(.degrees(phase.value * 5), anchor: .bottom)
+		}
 	}
 	
 }
